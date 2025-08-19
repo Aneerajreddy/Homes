@@ -150,7 +150,6 @@ export default function OwnerApp({ onBack }: OwnerAppProps) {
                   <option value={4}>4 BHK</option>
                 </select>
               </div>
-            </div>
 
             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Bath</label>
