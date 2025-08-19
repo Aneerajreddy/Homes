@@ -106,111 +106,157 @@ export default function FurnitureApp({ onBack }: FurnitureAppProps) {
         </div>
 
         {/* Orders List */}
-        <div className="bg-white rounded-xl shadow-lg">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Furniture Orders</h2>
-          </div>
-          <div className="divide-y divide-gray-200">
-            {furnitureOrders.map((order) => {
-              const property = getProperty(order.propertyId);
-              return (
-                <div key={order.id} className="px-6 py-6 hover:bg-gray-50 transition-colors">
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-gray-900">
-                          Order #{order.id.toUpperCase()}
-                        </h3>
-                        <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}>
-                          {order.status.replace('_', ' ').charAt(0).toUpperCase() + order.status.replace('_', ' ').slice(1)}
-                        </div>
-                      </div>
-                      
-                      {property && (
-                        <div className="mb-3">
-                          <p className="text-gray-900 font-medium">{property.title}</p>
-                          <p className="text-gray-600 flex items-center">
-                            <MapPin className="w-4 h-4 mr-1" />
-                            {property.location}
-                          </p>
-                        </div>
-                      )}
+<div className="bg-white rounded-xl shadow-lg">
+  <div className="px-6 py-4 border-b border-gray-200">
+    <h2 className="text-xl font-semibold text-gray-900">Furniture Orders</h2>
+  </div>
+  <div className="divide-y divide-gray-200">
+    {furnitureOrders.map((order) => {
+      const property = getProperty(order.propertyId);
+      return (
+        <div
+          key={order.id}
+          className="px-6 py-6 hover:bg-gray-50 transition-colors"
+        >
+          {/* Order Header */}
+          <div className="flex justify-between items-start">
+            <div className="flex-1">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Order #{order.id.toUpperCase()}
+                </h3>
+                <div
+                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(
+                    order.status
+                  )}`}
+                >
+                  {order.status
+                    .replace("_", " ")
+                    .charAt(0)
+                    .toUpperCase() + order.status.replace("_", " ").slice(1)}
+                </div>
+              </div>
 
-                      <div className="grid md:grid-cols-2 gap-6 mb-4">
-                        <div>
-                          <h4 className="font-medium text-gray-900 mb-2">Furniture Items</h4>
-                          <ul className="text-sm text-gray-600 space-y-1">
-                            {order.items.map((item, index) => (
-                              <li key={index} className="flex items-center">
-                                <Package className="w-3 h-3 mr-2 text-gray-400" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                            <div className="text-sm text-gray-600 space-y-2">
-                              <div>
-                                <span className="font-medium text-gray-700">Required Items:</span>
-                                <ul className="mt-1 space-y-1">
-                                  {order.items.map((item, index) => (
-                                    <li key={index} className="flex items-center">
-                                      <Package className="w-3 h-3 mr-2 text-gray-400" />
-                                      {item}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                              {property && (
-                                <div>
-                                  <span className="font-medium text-gray-700">Property Amenities:</span>
-                                  <div className="mt-1 text-xs text-gray-500">
-                                    {property.amenities.filter(a => 
-                                      ['Sofa Set', 'Dining Table & Chairs', 'Double Bed with Mattress', 'Single Bed with Mattress', 'Wardrobe', 'Study Table & Chair', 'TV Unit', 'Coffee Table', 'Shoe Rack', 'Bookshelf', 'Refrigerator', 'Microwave', 'Induction Cooktop', 'Mixer Grinder', 'Electric Kettle', 'Toaster', 'Rice Cooker', 'Washing Machine', 'Air Conditioner', 'Water Heater (Geyser)', 'Ceiling Fans', 'LED TV', 'Wi-Fi Router', 'Vacuum Cleaner', 'Iron & Ironing Board'].includes(a)
-                                    ).join(', ')}
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+              {property && (
+                <div className="mb-3">
+                  <p className="text-gray-900 font-medium">{property.title}</p>
+                  <p className="text-gray-600 flex items-center">
+                    <MapPin className="w-4 h-4 mr-1" />
+                    {property.location}
+                  </p>
+                </div>
+              )}
 
-                      <div className="flex space-x-2">
-                        {order.status === 'pending' && (
-                          <button
-                            onClick={() => handleStatusUpdate(order.id, 'processing')}
-                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                          >
-                            Start Processing
-                          </button>
-                        )}
-                        {order.status === 'processing' && (
-                          <button
-                            onClick={() => handleStatusUpdate(order.id, 'delivered')}
-                            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                          >
-                            Mark as Delivered
-                          </button>
-                        )}
-                        {order.status === 'delivered' && (
-                          <button
-                            onClick={() => handleStatusUpdate(order.id, 'setup_complete')}
-                            className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                          >
-                            Complete Setup
-                          </button>
-                        )}
-                        <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm transition-colors">
-                          View Details
-                        </button>
+              {/* Items & Amenities */}
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">
+                    Furniture Items
+                  </h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    {order.items.map((item, index) => (
+                      <li key={index} className="flex items-center">
+                        <Package className="w-3 h-3 mr-2 text-gray-400" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="text-sm text-gray-600 space-y-2">
+                  <div>
+                    <span className="font-medium text-gray-700">
+                      Required Items:
+                    </span>
+                    <ul className="mt-1 space-y-1">
+                      {order.items.map((item, index) => (
+                        <li key={index} className="flex items-center">
+                          <Package className="w-3 h-3 mr-2 text-gray-400" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {property && (
+                    <div>
+                      <span className="font-medium text-gray-700">
+                        Property Amenities:
+                      </span>
+                      <div className="mt-1 text-xs text-gray-500">
+                        {property.amenities
+                          .filter((a) =>
+                            [
+                              "Sofa Set",
+                              "Dining Table & Chairs",
+                              "Double Bed with Mattress",
+                              "Single Bed with Mattress",
+                              "Wardrobe",
+                              "Study Table & Chair",
+                              "TV Unit",
+                              "Coffee Table",
+                              "Shoe Rack",
+                              "Bookshelf",
+                              "Refrigerator",
+                              "Microwave",
+                              "Induction Cooktop",
+                              "Mixer Grinder",
+                              "Electric Kettle",
+                              "Toaster",
+                              "Rice Cooker",
+                              "Washing Machine",
+                              "Air Conditioner",
+                              "Water Heater (Geyser)",
+                              "Ceiling Fans",
+                              "LED TV",
+                              "Wi-Fi Router",
+                              "Vacuum Cleaner",
+                              "Iron & Ironing Board",
+                            ].includes(a)
+                          )
+                          .join(", ")}
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
-              );
-            })}
+              </div>
+            </div>
+          </div>
+
+          {/* Actions (moved inside same parent container to fix JSX error) */}
+          <div className="flex space-x-2 mt-4">
+            {order.status === "pending" && (
+              <button
+                onClick={() => handleStatusUpdate(order.id, "processing")}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
+              >
+                Start Processing
+              </button>
+            )}
+            {order.status === "processing" && (
+              <button
+                onClick={() => handleStatusUpdate(order.id, "delivered")}
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
+              >
+                Mark as Delivered
+              </button>
+            )}
+            {order.status === "delivered" && (
+              <button
+                onClick={() => handleStatusUpdate(order.id, "setup_complete")}
+                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
+              >
+                Complete Setup
+              </button>
+            )}
+            <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm transition-colors">
+              View Details
+            </button>
           </div>
         </div>
+      );
+    })}
+  </div>
+</div>
+
 
         {/* Inventory Section */}
         <div className="mt-8 bg-white rounded-xl shadow-lg">
