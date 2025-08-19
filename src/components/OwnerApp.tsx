@@ -152,6 +152,21 @@ export default function OwnerApp({ onBack }: OwnerAppProps) {
               </div>
             </div>
 
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Bath</label>
+                <select
+                  value={formData.bedrooms}
+                  onChange={(e) => setFormData({...formData, bedrooms: parseInt(e.target.value)})}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                >
+                  <option value={1}>1 BATH</option>
+                  <option value={2}>2 BATH</option>
+                  <option value={3}>3 BATH</option>
+                  <option value={4}>4 BATH</option>
+                </select>
+              </div>
+            </div>
+
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
               <textarea
