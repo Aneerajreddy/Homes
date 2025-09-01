@@ -52,11 +52,13 @@ interface PlatformContextType {
   users: User[];
   furnitureOrders: FurnitureOrder[];
   bookings: Booking[];
+  favorites: string[];
   addProperty: (property: Omit<Property, 'id'>) => void;
   updateProperty: (id: string, updates: Partial<Property>) => void;
   createBooking: (booking: Omit<Booking, 'id' | 'furnitureOrderId'>) => void;
   updateBookingStatus: (id: string, status: Booking['status']) => void;
   updateFurnitureOrderStatus: (id: string, status: FurnitureOrder['status']) => void;
+  toggleFavorite: (propertyId: string) => void;
 }
 
 const PlatformContext = createContext<PlatformContextType | undefined>(undefined);
@@ -66,7 +68,7 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
     {
       id: '1',
       title: 'Modern Family Apartment',
-      location: 'Downtown, Mumbai',
+      location: 'Bandra West, Mumbai',
       price: 45000,
       bedrooms: 3,
       bathrooms: 2,
@@ -92,6 +94,66 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
       status: 'verified',
       furnitureIncluded: true,
       description: 'Luxurious villa perfect for large families with private garden.'
+    },
+    {
+      id: '3',
+      title: 'Cozy 2BHK Apartment',
+      location: 'Koramangala, Bangalore',
+      price: 35000,
+      bedrooms: 2,
+      bathrooms: 2,
+      area: 950,
+      images: ['https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg'],
+      amenities: ['Parking', 'Security', 'Gym', 'Sofa Set', 'Dining Table & Chairs', 'Double Bed with Mattress', 'Wardrobe', 'TV Unit', 'Refrigerator', 'Microwave', 'Washing Machine', 'Air Conditioner', 'LED TV'],
+      ownerId: 'owner1',
+      status: 'verified',
+      furnitureIncluded: true,
+      description: 'Perfect for small families in the heart of Bangalore\'s tech hub.'
+    },
+    {
+      id: '4',
+      title: 'Spacious 3BHK Flat',
+      location: 'Sector 62, Noida',
+      price: 28000,
+      bedrooms: 3,
+      bathrooms: 2,
+      area: 1100,
+      images: ['https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg'],
+      amenities: ['Parking', 'Security', 'Garden', 'Power Backup', 'Sofa Set', 'Dining Table & Chairs', 'Double Bed with Mattress', 'Single Bed with Mattress', 'Wardrobe', 'Study Table & Chair', 'Refrigerator', 'Microwave', 'Washing Machine', 'Air Conditioner'],
+      ownerId: 'owner2',
+      status: 'verified',
+      furnitureIncluded: true,
+      description: 'Well-connected apartment with excellent amenities for growing families.'
+    },
+    {
+      id: '5',
+      title: 'Premium 4BHK Penthouse',
+      location: 'Jubilee Hills, Hyderabad',
+      price: 85000,
+      bedrooms: 4,
+      bathrooms: 4,
+      area: 2800,
+      images: ['https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg'],
+      amenities: ['Parking', 'Gym', 'Swimming Pool', 'Security', 'Garden', 'Club House', 'Sofa Set', 'Dining Table & Chairs', 'Double Bed with Mattress', 'Single Bed with Mattress', 'Wardrobe', 'Study Table & Chair', 'TV Unit', 'Coffee Table', 'Bookshelf', 'Refrigerator', 'Microwave', 'Induction Cooktop', 'Mixer Grinder', 'Washing Machine', 'Air Conditioner', 'LED TV', 'Wi-Fi Router'],
+      ownerId: 'owner1',
+      status: 'verified',
+      furnitureIncluded: true,
+      description: 'Luxurious penthouse with panoramic city views and premium amenities.'
+    },
+    {
+      id: '6',
+      title: 'Family-Friendly 2BHK',
+      location: 'Whitefield, Bangalore',
+      price: 32000,
+      bedrooms: 2,
+      bathrooms: 2,
+      area: 1000,
+      images: ['https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg'],
+      amenities: ['Parking', 'Security', 'Garden', 'Sofa Set', 'Dining Table & Chairs', 'Double Bed with Mattress', 'Wardrobe', 'TV Unit', 'Refrigerator', 'Microwave', 'Washing Machine', 'Air Conditioner', 'LED TV', 'Wi-Fi Router'],
+      ownerId: 'owner2',
+      status: 'verified',
+      furnitureIncluded: true,
+      description: 'Perfect for families with children, close to schools and parks.'
     }
   ]);
 
@@ -127,6 +189,8 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
       furnitureOrderId: 'fo1'
     }
   ]);
+
+  const [favorites, setFavorites] = useState<string[]>([]);
 
   const addProperty = (propertyData: Omit<Property, 'id'>) => {
     const newProperty = {
@@ -181,6 +245,14 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
     ));
   };
 
+  const toggleFavorite = (propertyId: string) => {
+    setFavorites(prev => 
+      prev.includes(propertyId)
+        ? prev.filter(id => id !== propertyId)
+        : [...prev, propertyId]
+    );
+  };
+
   return (
     <PlatformContext.Provider value={{
       properties,
@@ -191,7 +263,9 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
       updateProperty,
       createBooking,
       updateBookingStatus,
-      updateFurnitureOrderStatus
+      updateFurnitureOrderStatus,
+      favorites,
+      toggleFavorite
     }}>
       {children}
     </PlatformContext.Provider>
