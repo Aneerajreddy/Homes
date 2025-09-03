@@ -45,6 +45,9 @@ export default function Footer() {
               <Link to="/search" className="block text-gray-300 hover:text-white transition-colors text-sm">
                 Search Properties
               </Link>
+              <Link to="/services" className="block text-gray-300 hover:text-white transition-colors text-sm">
+                Our Services
+              </Link>
               <Link to="/about" className="block text-gray-300 hover:text-white transition-colors text-sm">
                 About Us
               </Link>

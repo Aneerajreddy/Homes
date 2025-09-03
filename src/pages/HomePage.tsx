@@ -181,10 +181,10 @@ export default function HomePage() {
 
           <div className="text-center">
             <Link
-              to="/search"
+              to="/services"
               className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
             >
-              <span>View All Properties</span>
+              <span>Explore Our Services</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

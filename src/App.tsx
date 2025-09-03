@@ -11,6 +11,7 @@ import PropertySearchPage from './pages/PropertySearchPage';
 import PropertyDetailPage from './pages/PropertyDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ServicesPage from './pages/ServicesPage';
 
 // Protected Pages
 import TenantDashboard from './pages/tenant/TenantDashboard';
@@ -48,6 +49,7 @@ function AppContent() {
           <Route path="/property/:id" element={<PropertyDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/services" element={<ServicesPage />} />
 
           {/* Tenant Routes */}
           <Route path="/dashboard" element={
