@@ -213,6 +213,213 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Rental Services</h2>
+            <p className="text-xl text-gray-600">End-to-end property rental management for owners and tenants</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Marketing & Promotion Services */}
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Marketing & Promotion</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Renting Price Guidance</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Online Marketing on Our Website</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Multi-Platform Online Marketing</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Local Offline Marketing</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Viewing & Tours */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+              <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                <Home className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Property Viewing</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Physical House Visits</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Virtual House Tours</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Move-in Video Reports</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Move-out Video Reports</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Verification & Legal */}
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6">
+              <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Verification & Legal</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Tenant Background Verification</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Rent Agreement & Paperwork</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Legal Document Verification</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Compliance Management</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Financial Management */}
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6">
+              <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
+                <Package className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Financial Management</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Rent Collection & Remittance</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Deposit Management & Refund</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Automated Payment Processing</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Financial Reporting</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Maintenance & Support */}
+            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6">
+              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-4">
+                <Star className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Maintenance & Support</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Property Maintenance & Repairs</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>24/7 Emergency Support</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Furniture Maintenance</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Quality Assurance</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Dedicated Support */}
+            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6">
+              <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Dedicated Support</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Dedicated Relationship Manager</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>App-based Assistance</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>24/7 Customer Support</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Dispute Resolution</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Service Process */}
+          <div className="mt-16">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">How Our Services Work</h3>
+              <p className="text-lg text-gray-600">Simple, transparent process from listing to move-in</p>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">1</span>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Property Listing</h4>
+                <p className="text-sm text-gray-600">Owner lists property with our marketing support and price guidance</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">2</span>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Tenant Matching</h4>
+                <p className="text-sm text-gray-600">We find verified tenants through virtual tours and background checks</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">3</span>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Agreement & Setup</h4>
+                <p className="text-sm text-gray-600">Legal paperwork, deposit management, and move-in coordination</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">4</span>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Ongoing Support</h4>
+                <p className="text-sm text-gray-600">Rent collection, maintenance, and dedicated relationship management</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

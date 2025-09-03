@@ -203,31 +203,31 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h3>
               <div className="space-y-4">
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="font-medium text-gray-900 mb-2">How does the furniture rental work?</h4>
+                  <h4 className="font-medium text-gray-900 mb-2">What services do you provide to property owners?</h4>
                   <p className="text-sm text-gray-600">
-                    All our properties come with complete furniture packages. The furniture cost is included 
-                    in your monthly rent, and we handle delivery, setup, and maintenance automatically.
+                    We provide complete rental management including price guidance, multi-platform marketing, 
+                    tenant verification, legal paperwork, rent collection, deposit management, and ongoing maintenance support.
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="font-medium text-gray-900 mb-2">What documents do I need for booking?</h4>
+                  <h4 className="font-medium text-gray-900 mb-2">How do you help tenants find the right property?</h4>
                   <p className="text-sm text-gray-600">
-                    You'll need ID proof (Aadhar/Passport), income proof (salary slips/bank statements), 
-                    and references. All documents can be uploaded digitally during the booking process.
+                    We offer both virtual house tours and physical visits, complete background verification, 
+                    furniture setup coordination, and dedicated relationship managers for personalized assistance.
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="font-medium text-gray-900 mb-2">How are properties verified?</h4>
+                  <h4 className="font-medium text-gray-900 mb-2">What's included in your maintenance services?</h4>
                   <p className="text-sm text-gray-600">
-                    We verify ownership documents, conduct physical inspections, validate owner identity, 
-                    and ensure all legal compliances before listing any property.
+                    We handle property maintenance, repairs, furniture maintenance, move-in/move-out video reports, 
+                    and provide 24/7 emergency support through our app-based assistance system.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">What if I need maintenance or repairs?</h4>
+                  <h4 className="font-medium text-gray-900 mb-2">How does your dedicated relationship manager help?</h4>
                   <p className="text-sm text-gray-600">
-                    Our 24/7 support team handles all maintenance requests. For furniture issues, 
-                    our partner provides free repairs and replacements as needed.
+                    Each client gets a dedicated relationship manager who provides personalized support, 
+                    handles all communications, resolves issues quickly, and ensures a smooth rental experience.
                   </p>
                 </div>
               </div>

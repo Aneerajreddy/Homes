@@ -177,6 +177,148 @@ export default function AboutPage() {
         </div>
       </section>
 
+       {/* Services Section */}
+       <section className="py-16 bg-white">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="text-center mb-12">
+             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Complete Service Portfolio</h2>
+             <p className="text-xl text-gray-600">Comprehensive rental management from listing to move-out</p>
+           </div>
+
+           <div className="grid md:grid-cols-2 gap-12">
+             {/* For Property Owners */}
+             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+               <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">For Property Owners</h3>
+               <div className="space-y-4">
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                     <TrendingUp className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-blue-900">Renting Price Guidance</h4>
+                     <p className="text-sm text-blue-800">Market analysis and optimal pricing recommendations</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Star className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-blue-900">Complete Marketing Package</h4>
+                     <p className="text-sm text-blue-800">Online & offline marketing across multiple platforms</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Package className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-blue-900">Rent Collection & Remittance</h4>
+                     <p className="text-sm text-blue-800">Automated rent collection with timely owner payments</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Shield className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-blue-900">Deposit Management</h4>
+                     <p className="text-sm text-blue-800">Secure deposit handling and refund processing</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Users className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-blue-900">Dedicated Relationship Manager</h4>
+                     <p className="text-sm text-blue-800">Personal support throughout the rental journey</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             {/* For Tenants */}
+             <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
+               <h3 className="text-2xl font-bold text-green-900 mb-6 text-center">For Tenant Families</h3>
+               <div className="space-y-4">
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Home className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-green-900">Virtual & Physical Tours</h4>
+                     <p className="text-sm text-green-800">Convenient viewing options to find your perfect home</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
+                     <CheckCircle className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-green-900">Complete Verification</h4>
+                     <p className="text-sm text-green-800">Thorough background checks for trusted tenancy</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Package className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-green-900">Furniture & Setup Included</h4>
+                     <p className="text-sm text-green-800">Complete furniture package with delivery and setup</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Star className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-green-900">Maintenance & Repairs</h4>
+                     <p className="text-sm text-green-800">24/7 support for all property and furniture issues</p>
+                   </div>
+                 </div>
+                 <div className="flex items-start space-x-3">
+                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
+                     <Users className="w-3 h-3 text-white" />
+                   </div>
+                   <div>
+                     <h4 className="font-semibold text-green-900">App-based Assistance</h4>
+                     <p className="text-sm text-green-800">Manage everything from anywhere with our mobile app</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           {/* Service Guarantee */}
+           <div className="mt-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white text-center">
+             <h3 className="text-2xl font-bold mb-4">Our Service Guarantee</h3>
+             <p className="text-lg text-blue-100 mb-6 max-w-3xl mx-auto">
+               We're committed to providing exceptional service at every step. From property listing to move-out, 
+               our dedicated team ensures a smooth, transparent, and hassle-free rental experience for everyone.
+             </p>
+             <div className="grid md:grid-cols-3 gap-6">
+               <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                 <Shield className="w-8 h-8 mx-auto mb-2" />
+                 <div className="font-semibold">100% Verified</div>
+                 <div className="text-sm text-blue-100">Properties & Tenants</div>
+               </div>
+               <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                 <Star className="w-8 h-8 mx-auto mb-2" />
+                 <div className="font-semibold">24/7 Support</div>
+                 <div className="text-sm text-blue-100">Always Available</div>
+               </div>
+               <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                 <CheckCircle className="w-8 h-8 mx-auto mb-2" />
+                 <div className="font-semibold">Guaranteed</div>
+                 <div className="text-sm text-blue-100">Service Quality</div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+
       {/* Values Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
