@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { Search, MapPin, Filter, Grid, List, Heart, Bed, Bath, Square, Star } from 'lucide-react';
+import { Search, MapPin, Filter, Grid, List, Heart, Bed, Bath, Square } from 'lucide-react';
 import { usePlatform } from '../context/PlatformContext';
 import { useAuth } from '../context/AuthContext';
 
@@ -54,7 +54,7 @@ export default function PropertySearchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-4">
+  <div className="min-h-screen bg-gray-50 pt-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search Header */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
@@ -283,8 +283,7 @@ export default function PropertySearchPage() {
             </button>
           </div>
         )}
-      </div>
     </div>
-    </div>
+  </div>
   );
 }

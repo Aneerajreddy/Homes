@@ -61,7 +61,7 @@ interface PlatformContextType {
   toggleFavorite: (propertyId: string) => void;
 }
 
-const PlatformContext = createContext<PlatformContextType | undefined>(undefined);
+export const PlatformContext = createContext<PlatformContextType | undefined>(undefined);
 
 export function PlatformProvider({ children }: { children: ReactNode }) {
   const [properties, setProperties] = useState<Property[]>([
@@ -161,8 +161,6 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
     { id: 'tenant1', name: 'Amit Sharma', email: 'amit@email.com', phone: '+91-9876543210', role: 'tenant', verified: true },
     { id: 'owner1', name: 'Priya Singh', email: 'priya@email.com', phone: '+91-9876543211', role: 'owner', verified: true },
     { id: 'furniture1', name: 'FurniCorp Ltd', email: 'orders@furnicorp.com', phone: '+91-9876543212', role: 'furniture', verified: true },
-    { id: 'admin1', name: 'System Admin', email: 'admin@platform.com', phone: '+91-9876543213', role: 'admin', verified: true }
-  ]);
     { id: 'admin1', name: 'System Admin', email: 'admin@platform.com', phone: '+91-9876543213', role: 'admin', verified: true }
   ]);
 
