@@ -163,6 +163,8 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
     { id: 'furniture1', name: 'FurniCorp Ltd', email: 'orders@furnicorp.com', phone: '+91-9876543212', role: 'furniture', verified: true },
     { id: 'admin1', name: 'System Admin', email: 'admin@platform.com', phone: '+91-9876543213', role: 'admin', verified: true }
   ]);
+    { id: 'admin1', name: 'System Admin', email: 'admin@platform.com', phone: '+91-9876543213', role: 'admin', verified: true }
+  ]);
 
   const [furnitureOrders, setFurnitureOrders] = useState<FurnitureOrder[]>([
     {
