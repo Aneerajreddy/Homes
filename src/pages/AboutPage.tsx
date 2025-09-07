@@ -177,11 +177,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-       {/* Services Section */}
+  {/* Services Section removed */}
        <section className="py-16 bg-white">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-12">
-             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Complete Service Portfolio</h2>
+             {/* Service Portfolio heading removed */}
              <p className="text-xl text-gray-600">Comprehensive rental management from listing to move-out</p>
            </div>
 
@@ -291,11 +291,11 @@ export default function AboutPage() {
              </div>
            </div>
 
-           {/* Service Guarantee */}
+           {/* Service Guarantee removed */}
            <div className="mt-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white text-center">
-             <h3 className="text-2xl font-bold mb-4">Our Service Guarantee</h3>
+             {/* Service Guarantee heading removed */}
              <p className="text-lg text-blue-100 mb-6 max-w-3xl mx-auto">
-               We're committed to providing exceptional service at every step. From property listing to move-out, 
+               {/* Service description removed */}
                our dedicated team ensures a smooth, transparent, and hassle-free rental experience for everyone.
              </p>
              <div className="grid md:grid-cols-3 gap-6">
@@ -312,7 +312,7 @@ export default function AboutPage() {
                <div className="bg-white bg-opacity-20 rounded-lg p-4">
                  <CheckCircle className="w-8 h-8 mx-auto mb-2" />
                  <div className="font-semibold">Guaranteed</div>
-                 <div className="text-sm text-blue-100">Service Quality</div>
+                 {/* Service Quality removed */}
                </div>
              </div>
            </div>
@@ -346,7 +346,7 @@ export default function AboutPage() {
                 <Award className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Excellence</h3>
-              <p className="text-gray-600">We strive for excellence in every interaction, from property quality to customer service.</p>
+              {/* Service excellence description removed */}
             </div>
           </div>
         </div>

@@ -45,9 +45,7 @@ export default function Footer() {
               <Link to="/search" className="block text-gray-300 hover:text-white transition-colors text-sm">
                 Search Properties
               </Link>
-              <Link to="/services" className="block text-gray-300 hover:text-white transition-colors text-sm">
-                Our Services
-              </Link>
+                  {/* Services link removed from Quick Links */}
               <Link to="/about" className="block text-gray-300 hover:text-white transition-colors text-sm">
                 About Us
               </Link>
@@ -67,29 +65,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <div className="space-y-2">
-              <a href="#" className="block text-gray-300 hover:text-white transition-colors text-sm">
-                Property Verification
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-white transition-colors text-sm">
-                Furniture Rental
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-white transition-colors text-sm">
-                Legal Assistance
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-white transition-colors text-sm">
-                Moving Services
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-white transition-colors text-sm">
-                Maintenance Support
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-white transition-colors text-sm">
-                Insurance
-              </a>
-            </div>
-          </div>
+              {/* Services section removed */}
 
           {/* Contact Info */}
           <div>

@@ -21,7 +21,7 @@ export default function Navbar() {
   const publicNavItems = [
     { path: '/', label: 'Home', icon: Home },
     { path: '/search', label: 'Search Properties', icon: Search },
-    { path: '/services', label: 'Services', icon: null },
+  // { path: '/services', label: 'Services', icon: null },
     { path: '/about', label: 'About', icon: null },
     { path: '/contact', label: 'Contact', icon: null }
   ];

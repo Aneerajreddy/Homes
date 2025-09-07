@@ -69,7 +69,7 @@ export default function LandingPage({ onRoleSelect }: LandingPageProps) {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600"> Ecosystem</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Streamlined property rentals with verified homes, automatic furniture inclusion, and trusted service providers. 
+            Streamlined property rentals with verified homes and automatic furniture inclusion.
             Four integrated applications working together for your family's needs.
           </p>
           

@@ -203,7 +203,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h3>
               <div className="space-y-4">
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="font-medium text-gray-900 mb-2">What services do you provide to property owners?</h4>
+                  {/* Services question removed */}
                   <p className="text-sm text-gray-600">
                     We provide complete rental management including price guidance, multi-platform marketing, 
                     tenant verification, legal paperwork, rent collection, deposit management, and ongoing maintenance support.
@@ -217,7 +217,7 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="font-medium text-gray-900 mb-2">What's included in your maintenance services?</h4>
+                  {/* Maintenance services question removed */}
                   <p className="text-sm text-gray-600">
                     We handle property maintenance, repairs, furniture maintenance, move-in/move-out video reports, 
                     and provide 24/7 emergency support through our app-based assistance system.
