@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { Calendar, MapPin, CheckCircle, Clock, XCircle, Package, CreditCard } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, MapPin, CheckCircle, Clock, XCircle, Package, CreditCard, Shield } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { usePlatform } from '../../context/PlatformContext';
+import { Link } from 'react-router-dom';
 
 export default function BookingHistoryPage() {
   const { user } = useAuth();
@@ -187,7 +188,7 @@ export default function BookingHistoryPage() {
                               Pay Rent
                             </button>
                             <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                              Request Service
+                              {/* Request Service button removed */}
                             </button>
                           </>
                         )}

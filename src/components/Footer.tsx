@@ -1,4 +1,4 @@
-import React from 'react';
+// ...existing code...
 import { Link } from 'react-router-dom';
 import { Home, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 

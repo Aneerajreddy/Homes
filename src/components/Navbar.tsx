@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Home, User, Heart, Search, Menu, X, LogOut, Settings, Bell } from 'lucide-react';
+import { Home, User, Heart, Search, Menu, X, LogOut, Settings } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function Navbar() {

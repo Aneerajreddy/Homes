@@ -1,6 +1,6 @@
-import React from 'react';
+// ...existing code...
 import { Link } from 'react-router-dom';
-import { Plus, Home, CheckCircle, Clock, TrendingUp, Users, DollarSign, Eye } from 'lucide-react';
+import { Plus, Home, CheckCircle, TrendingUp, Users, DollarSign, Eye } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { usePlatform } from '../../context/PlatformContext';
 
@@ -10,7 +10,7 @@ export default function OwnerDashboard() {
 
   const ownerProperties = properties.filter(p => p.ownerId === user?.id);
   const verifiedProperties = ownerProperties.filter(p => p.status === 'verified');
-  const pendingProperties = ownerProperties.filter(p => p.status === 'pending');
+  // Removed unused pendingProperties variable
   const rentedProperties = ownerProperties.filter(p => p.status === 'rented');
 
   const totalRevenue = rentedProperties.reduce((sum, p) => sum + p.price, 0);

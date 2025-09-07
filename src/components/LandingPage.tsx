@@ -1,6 +1,5 @@
-import React from 'react';
 import { Home, Users, Package, Shield, CheckCircle, Zap, Lock } from 'lucide-react';
-import { UserRole } from '../App';
+type UserRole = 'tenant' | 'owner' | 'furniture' | 'admin';
 
 interface LandingPageProps {
   onRoleSelect: (role: UserRole) => void;

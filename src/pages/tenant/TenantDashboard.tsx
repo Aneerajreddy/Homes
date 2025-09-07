@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+// ...existing code...
 import { Link } from 'react-router-dom';
-import { Home, Search, Heart, Calendar, MapPin, Star, TrendingUp, Package, Shield } from 'lucide-react';
+import { Home, Search, Heart, Calendar, MapPin, Star, Package, Shield } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { usePlatform } from '../../context/PlatformContext';
 
@@ -10,7 +10,7 @@ export default function TenantDashboard() {
 
   const userBookings = bookings.filter(b => b.tenantId === user?.id);
   const activeBooking = userBookings.find(b => b.status === 'active');
-  const favoriteProperties = properties.filter(p => favorites.includes(p.id));
+  // Removed unused favoriteProperties variable
   const recommendedProperties = properties.filter(p => 
     p.status === 'verified' && 
     user?.preferredLocations?.some(loc => p.location.includes(loc)) &&
@@ -104,7 +104,7 @@ export default function TenantDashboard() {
                       Pay Rent
                     </button>
                     <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium transition-colors">
-                      Request Service
+                      {/* Request Service button removed */}
                     </button>
                   </div>
                 </div>

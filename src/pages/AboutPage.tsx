@@ -1,4 +1,4 @@
-import React from 'react';
+// ...existing code...
 import { Shield, Package, Users, Award, CheckCircle, Heart } from 'lucide-react';
 
 export default function AboutPage() {
@@ -192,7 +192,7 @@ export default function AboutPage() {
                <div className="space-y-4">
                  <div className="flex items-start space-x-3">
                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                     <TrendingUp className="w-3 h-3 text-white" />
+                     {/* Removed undefined TrendingUp icon */}
                    </div>
                    <div>
                      <h4 className="font-semibold text-blue-900">Renting Price Guidance</h4>
@@ -201,7 +201,7 @@ export default function AboutPage() {
                  </div>
                  <div className="flex items-start space-x-3">
                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Star className="w-3 h-3 text-white" />
+                     {/* Removed undefined Star icon */}
                    </div>
                    <div>
                      <h4 className="font-semibold text-blue-900">Complete Marketing Package</h4>
@@ -244,7 +244,7 @@ export default function AboutPage() {
                <div className="space-y-4">
                  <div className="flex items-start space-x-3">
                    <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Home className="w-3 h-3 text-white" />
+                     {/* Removed undefined Home icon */}
                    </div>
                    <div>
                      <h4 className="font-semibold text-green-900">Virtual & Physical Tours</h4>
@@ -271,7 +271,7 @@ export default function AboutPage() {
                  </div>
                  <div className="flex items-start space-x-3">
                    <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Star className="w-3 h-3 text-white" />
+                     {/* Removed undefined Star icon */}
                    </div>
                    <div>
                      <h4 className="font-semibold text-green-900">Maintenance & Repairs</h4>
@@ -305,7 +305,7 @@ export default function AboutPage() {
                  <div className="text-sm text-blue-100">Properties & Tenants</div>
                </div>
                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                 <Star className="w-8 h-8 mx-auto mb-2" />
+                 {/* Removed undefined Star icon */}
                  <div className="font-semibold">24/7 Support</div>
                  <div className="text-sm text-blue-100">Always Available</div>
                </div>
