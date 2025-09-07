@@ -1,9 +1,9 @@
-import React from 'react';
+// ...existing code...
 import { Link } from 'react-router-dom';
-import { 
-  TrendingUp, Globe, Share2, MapPin, Home, Video, Shield, FileText, 
+import {
+  TrendingUp, Globe, Share2, MapPin, Home, Video, Shield, FileText,
   CreditCard, Wallet, Camera, Wrench, Users, Smartphone, CheckCircle,
-  Star, ArrowRight, Phone, Mail
+  ArrowRight, Phone, Mail
 } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -133,7 +133,7 @@ export default function ServicesPage() {
             Complete Rental Services
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            End-to-end property rental management for owners and tenants. 
+            End-to-end property rental management for owners and tenants.
             From listing to move-out, we handle everything so you don't have to.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -161,7 +161,7 @@ export default function ServicesPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Comprehensive Rental Solutions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We provide complete rental management services for both property owners and tenant families, 
+              We provide complete rental management services for both property owners and tenant families,
               ensuring a smooth, transparent, and hassle-free experience for everyone.
             </p>
           </div>
@@ -248,123 +248,19 @@ export default function ServicesPage() {
             <p className="text-xl text-gray-600">Simple, transparent process from listing to move-out</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className={`w-16 h-16 ${step.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                  <span className="text-white font-bold text-xl">{step.step}</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {processSteps.map((step) => (
+              <div key={step.step} className="text-center">
+                <div className={`w-12 h-12 ${step.color} rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg`}>
+                  {step.step}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-8 h-1 bg-gray-300 transform -translate-x-4"></div>
-                )}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Service Guarantee */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-12 text-white text-center">
-            <h2 className="text-3xl font-bold mb-6">Our Service Guarantee</h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              We're committed to providing exceptional service at every step. From property listing to move-out, 
-              our dedicated team ensures a smooth, transparent, and hassle-free rental experience.
-            </p>
-            
-            <div className="grid md:grid-cols-4 gap-6 mb-8">
-              <div className="bg-white bg-opacity-20 rounded-xl p-6">
-                <Shield className="w-10 h-10 mx-auto mb-3" />
-                <div className="font-semibold text-lg">100% Verified</div>
-                <div className="text-sm text-blue-100">Properties & Tenants</div>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-xl p-6">
-                <Star className="w-10 h-10 mx-auto mb-3" />
-                <div className="font-semibold text-lg">24/7 Support</div>
-                <div className="text-sm text-blue-100">Always Available</div>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-xl p-6">
-                <CheckCircle className="w-10 h-10 mx-auto mb-3" />
-                <div className="font-semibold text-lg">Guaranteed</div>
-                <div className="text-sm text-blue-100">Service Quality</div>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-xl p-6">
-                <Users className="w-10 h-10 mx-auto mb-3" />
-                <div className="font-semibold text-lg">Dedicated</div>
-                <div className="text-sm text-blue-100">Relationship Manager</div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/register"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center space-x-2"
-              >
-                <span>Start Your Journey</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                to="/contact"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center space-x-2"
-              >
-                <Phone className="w-5 h-5" />
-                <span>Schedule Consultation</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Detailed Service Breakdown */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Service Portfolio</h2>
-            <p className="text-xl text-gray-600">Everything you need for successful property rentals</p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Marketing & Promotion */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Marketing & Promotion</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Renting Price Guidance</div>
-                    <div className="text-sm text-gray-600">Market analysis and optimal pricing recommendations</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Online Marketing on Our Website</div>
-                    <div className="text-sm text-gray-600">Premium listings with enhanced visibility</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Multi-Platform Online Marketing</div>
-                    <div className="text-sm text-gray-600">Listings across multiple property portals</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Local Offline Marketing</div>
-                    <div className="text-sm text-gray-600">Strategic neighborhood promotion</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Viewing & Documentation */}
             <div className="bg-white rounded-xl shadow-lg p-8">
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center mx-auto mb-6">
@@ -436,6 +332,44 @@ export default function ServicesPage() {
                   <div>
                     <div className="font-semibold text-gray-900">Deposit Management & Refund</div>
                     <div className="text-sm text-gray-600">Secure deposit handling and refunds</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Property Management */}
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Property Management</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-gray-900">Dedicated Relationship Manager</div>
+                    <div className="text-sm text-gray-600">Personal support for owners and tenants</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-gray-900">App-based Assistance</div>
+                    <div className="text-sm text-gray-600">Instant service requests and updates</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-gray-900">24/7 Maintenance Support</div>
+                    <div className="text-sm text-gray-600">Quick resolution of issues</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-gray-900">Performance Reporting</div>
+                    <div className="text-sm text-gray-600">Monthly insights and analytics</div>
                   </div>
                 </div>
               </div>
