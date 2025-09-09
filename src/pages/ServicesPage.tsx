@@ -1,9 +1,9 @@
-// ...existing code...
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, Globe, Share2, MapPin, Home, Video, Shield, FileText,
   CreditCard, Wallet, Camera, Wrench, Users, Smartphone, CheckCircle,
-  ArrowRight, Phone, Mail
+  ArrowRight, Mail
 } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -113,14 +113,8 @@ export default function ServicesPage() {
     {
       step: 3,
       title: 'Agreement & Documentation',
-      description: 'Complete legal paperwork, deposit management, and move-in coordination with video documentation.',
-      color: 'bg-purple-600'
-    },
-    {
-      step: 4,
-      title: 'Ongoing Relationship Management',
-      description: 'Dedicated support for rent collection, maintenance, and relationship management throughout the tenancy.',
-      color: 'bg-orange-600'
+      description: 'Complete legal documentation and rental agreement preparation with lawyer consultation included.',
+      color: 'bg-yellow-600'
     }
   ];
 
@@ -129,29 +123,8 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-green-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Complete Rental Services
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            End-to-end property rental management for owners and tenants.
-            From listing to move-out, we handle everything so you don't have to.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/register"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center space-x-2"
-            >
-              <Users className="w-5 h-5" />
-              <span>Get Started Today</span>
-            </Link>
-            <Link
-              to="/contact"
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center space-x-2"
-            >
-              <Phone className="w-5 h-5" />
-              <span>Talk to Expert</span>
-            </Link>
-          </div>
+          <h1 className="text-4xl font-bold mb-4">Rental Services for Owners & Families</h1>
+          <p className="text-xl mb-8">End-to-end rental management for property owners and tenant families</p>
         </div>
       </section>
 
@@ -208,8 +181,8 @@ export default function ServicesPage() {
                 <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-green-900 mb-2">For Tenant Families</h3>
-                <p className="text-green-800">Comprehensive support from search to move-out</p>
+                <h3 className="text-2xl font-bold text-green-900 mb-2">For Tenants</h3>
+                <p className="text-green-800">Rental solutions for families seeking quality homes</p>
               </div>
 
               <div className="space-y-6">
@@ -244,11 +217,10 @@ export default function ServicesPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Service Process</h2>
-            <p className="text-xl text-gray-600">Simple, transparent process from listing to move-out</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">How Our Service Works</h2>
+            <p className="text-xl text-gray-600">A simple, transparent process for owners and tenants</p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-8">
             {processSteps.map((step) => (
               <div key={step.step} className="text-center">
                 <div className={`w-12 h-12 ${step.color} rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg`}>
@@ -259,6 +231,16 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Core Service Categories */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Services</h2>
+            <p className="text-xl text-gray-600">Everything you need for a seamless rental experience</p>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Viewing & Documentation */}
@@ -268,34 +250,20 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Viewing & Documentation</h3>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Physical House Visits</div>
-                    <div className="text-sm text-gray-600">Guided property tours with expert assistance</div>
+                {[
+                  { title: "Physical House Visits", desc: "Guided property tours with expert assistance" },
+                  { title: "Virtual House Tours", desc: "360° virtual tours and live video calls" },
+                  { title: "Move-in Video Reports", desc: "Detailed condition documentation" },
+                  { title: "Move-out Video Reports", desc: "Transparent damage assessment" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-gray-900">{item.title}</div>
+                      <div className="text-sm text-gray-600">{item.desc}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Virtual House Tours</div>
-                    <div className="text-sm text-gray-600">360° virtual tours and live video calls</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Move-in Video Reports</div>
-                    <div className="text-sm text-gray-600">Detailed condition documentation</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Move-out Video Reports</div>
-                    <div className="text-sm text-gray-600">Transparent damage assessment</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -306,34 +274,20 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Financial & Legal</h3>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Tenant Background Verification</div>
-                    <div className="text-sm text-gray-600">Comprehensive background and credit checks</div>
+                {[
+                  { title: "Tenant Background Verification", desc: "Comprehensive background and credit checks" },
+                  { title: "Rent Agreement & Paperwork", desc: "Legal documentation and registration" },
+                  { title: "Rent Collection & Remittance", desc: "Automated payment processing" },
+                  { title: "Deposit Management & Refund", desc: "Secure deposit handling and refunds" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-gray-900">{item.title}</div>
+                      <div className="text-sm text-gray-600">{item.desc}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Rent Agreement & Paperwork</div>
-                    <div className="text-sm text-gray-600">Legal documentation and registration</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Rent Collection & Remittance</div>
-                    <div className="text-sm text-gray-600">Automated payment processing</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Deposit Management & Refund</div>
-                    <div className="text-sm text-gray-600">Secure deposit handling and refunds</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -344,34 +298,20 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Property Management</h3>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Dedicated Relationship Manager</div>
-                    <div className="text-sm text-gray-600">Personal support for owners and tenants</div>
+                {[
+                  { title: "Dedicated Relationship Manager", desc: "Personal support for owners and tenants" },
+                  { title: "App-based Assistance", desc: "Instant service requests and updates" },
+                  { title: "24/7 Maintenance Support", desc: "Quick resolution of issues" },
+                  { title: "Performance Reporting", desc: "Monthly insights and analytics" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-gray-900">{item.title}</div>
+                      <div className="text-sm text-gray-600">{item.desc}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">App-based Assistance</div>
-                    <div className="text-sm text-gray-600">Instant service requests and updates</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">24/7 Maintenance Support</div>
-                    <div className="text-sm text-gray-600">Quick resolution of issues</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Performance Reporting</div>
-                    <div className="text-sm text-gray-600">Monthly insights and analytics</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -424,42 +364,15 @@ export default function ServicesPage() {
             <div className="bg-gray-50 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">What's Included in Support</h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2">
+                {[
+                  "Emergency repairs", "Furniture maintenance", "Appliance servicing", "Plumbing & electrical",
+                  "Regular inspections", "Quality assurance", "Dispute resolution", "Legal assistance"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Emergency repairs</span>
+                    <span className="text-sm text-gray-700">{item}</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Furniture maintenance</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Appliance servicing</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Plumbing & electrical</span>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Regular inspections</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Quality assurance</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Dispute resolution</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-gray-700">Legal assistance</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

@@ -25,26 +25,6 @@ export default function AboutPage() {
     }
   ];
 
-  const team = [
-    {
-      name: 'Rajesh Kumar',
-      role: 'Founder & CEO',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Former real estate executive with 15+ years experience in property management.'
-    },
-    {
-      name: 'Priya Sharma',
-      role: 'Head of Operations',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Expert in logistics and customer experience with background in hospitality.'
-    },
-    {
-      name: 'Amit Patel',
-      role: 'Technology Lead',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
-      description: 'Full-stack developer passionate about creating seamless user experiences.'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -124,25 +104,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section - Company Impact */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Families Nationwide</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Impact</h2>
+            <p className="text-xl text-gray-600">Building trust and comfort for families nationwide</p>
           </div>
-
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">10,000+</div>
-              <div className="text-gray-600">Happy Families</div>
+              <div className="text-gray-600">Families Served</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-green-600 mb-2">2,500+</div>
-              <div className="text-gray-600">Verified Properties</div>
+              <div className="text-gray-600">Verified Homes</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-purple-600 mb-2">25+</div>
-              <div className="text-gray-600">Cities Covered</div>
+              <div className="text-gray-600">Cities Reached</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-orange-600 mb-2">4.8/5</div>
@@ -151,173 +131,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Team Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-            <p className="text-xl text-gray-600">Passionate professionals dedicated to your family's needs</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-24 h-24 rounded-full object-cover mx-auto mb-4"
-                />
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-                <div className="text-blue-600 font-medium mb-3">{member.role}</div>
-                <p className="text-gray-600 text-sm">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-  {/* Services Section removed */}
-       <section className="py-16 bg-white">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-12">
-             {/* Service Portfolio heading removed */}
-             <p className="text-xl text-gray-600">Comprehensive rental management from listing to move-out</p>
-           </div>
-
-           <div className="grid md:grid-cols-2 gap-12">
-             {/* For Property Owners */}
-             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-               <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">For Property Owners</h3>
-               <div className="space-y-4">
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                     {/* Removed undefined TrendingUp icon */}
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-blue-900">Renting Price Guidance</h4>
-                     <p className="text-sm text-blue-800">Market analysis and optimal pricing recommendations</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                     {/* Removed undefined Star icon */}
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-blue-900">Complete Marketing Package</h4>
-                     <p className="text-sm text-blue-800">Online & offline marketing across multiple platforms</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Package className="w-3 h-3 text-white" />
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-blue-900">Rent Collection & Remittance</h4>
-                     <p className="text-sm text-blue-800">Automated rent collection with timely owner payments</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Shield className="w-3 h-3 text-white" />
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-blue-900">Deposit Management</h4>
-                     <p className="text-sm text-blue-800">Secure deposit handling and refund processing</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Users className="w-3 h-3 text-white" />
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-blue-900">Dedicated Relationship Manager</h4>
-                     <p className="text-sm text-blue-800">Personal support throughout the rental journey</p>
-                   </div>
-                 </div>
-               </div>
-             </div>
-
-             {/* For Tenants */}
-             <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
-               <h3 className="text-2xl font-bold text-green-900 mb-6 text-center">For Tenant Families</h3>
-               <div className="space-y-4">
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
-                     {/* Removed undefined Home icon */}
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-green-900">Virtual & Physical Tours</h4>
-                     <p className="text-sm text-green-800">Convenient viewing options to find your perfect home</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
-                     <CheckCircle className="w-3 h-3 text-white" />
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-green-900">Complete Verification</h4>
-                     <p className="text-sm text-green-800">Thorough background checks for trusted tenancy</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Package className="w-3 h-3 text-white" />
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-green-900">Furniture & Setup Included</h4>
-                     <p className="text-sm text-green-800">Complete furniture package with delivery and setup</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
-                     {/* Removed undefined Star icon */}
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-green-900">Maintenance & Repairs</h4>
-                     <p className="text-sm text-green-800">24/7 support for all property and furniture issues</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start space-x-3">
-                   <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mt-0.5">
-                     <Users className="w-3 h-3 text-white" />
-                   </div>
-                   <div>
-                     <h4 className="font-semibold text-green-900">App-based Assistance</h4>
-                     <p className="text-sm text-green-800">Manage everything from anywhere with our mobile app</p>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-
-           {/* Service Guarantee removed */}
-           <div className="mt-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white text-center">
-             {/* Service Guarantee heading removed */}
-             <p className="text-lg text-blue-100 mb-6 max-w-3xl mx-auto">
-               {/* Service description removed */}
-               our dedicated team ensures a smooth, transparent, and hassle-free rental experience for everyone.
-             </p>
-             <div className="grid md:grid-cols-3 gap-6">
-               <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                 <Shield className="w-8 h-8 mx-auto mb-2" />
-                 <div className="font-semibold">100% Verified</div>
-                 <div className="text-sm text-blue-100">Properties & Tenants</div>
-               </div>
-               <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                 {/* Removed undefined Star icon */}
-                 <div className="font-semibold">24/7 Support</div>
-                 <div className="text-sm text-blue-100">Always Available</div>
-               </div>
-               <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                 <CheckCircle className="w-8 h-8 mx-auto mb-2" />
-                 <div className="font-semibold">Guaranteed</div>
-                 {/* Service Quality removed */}
-               </div>
-             </div>
-           </div>
-         </div>
-       </section>
 
       {/* Values Section */}
       <section className="py-16 bg-white">
@@ -346,7 +159,7 @@ export default function AboutPage() {
                 <Award className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Excellence</h3>
-              {/* Service excellence description removed */}
+              <p className="text-gray-600">We strive for excellence in every aspect of our service, from property quality to customer support, ensuring families have the best rental experience possible.</p>
             </div>
           </div>
         </div>
