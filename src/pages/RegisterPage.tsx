@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Home, Mail, Lock, User, Phone, Users, MapPin } from 'lucide-react';
+import { Eye, EyeOff, Home, Mail, Lock, User, Phone, Users } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import type { RegisterData } from '../context/AuthContext';
 
 export default function RegisterPage() {
   const navigate = useNavigate();
   const { register, isLoading } = useAuth();
   
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<RegisterData & { confirmPassword: string }>({
     email: '',
     password: '',
     confirmPassword: '',
     firstName: '',
     lastName: '',
     phone: '',
-    role: 'tenant' as 'tenant' | 'owner',
+    role: 'tenant',
     familySize: 2,
     preferredBudgetMin: 20000,
     preferredBudgetMax: 50000,
-    preferredLocations: [] as string[]
+    preferredLocations: []
   });
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -32,9 +33,9 @@ export default function RegisterPage() {
   const handleLocationToggle = (city: string) => {
     setFormData(prev => ({
       ...prev,
-      preferredLocations: prev.preferredLocations.includes(city)
-        ? prev.preferredLocations.filter(l => l !== city)
-        : [...prev.preferredLocations, city]
+      preferredLocations: (prev.preferredLocations ?? []).includes(city)
+        ? (prev.preferredLocations ?? []).filter((l: string) => l !== city)
+        : [...(prev.preferredLocations ?? []), city]
     }));
   };
 
@@ -64,7 +65,7 @@ export default function RegisterPage() {
     try {
       await register(formData);
       navigate('/app');
-    } catch (err) {
+    } catch {
       setError('Registration failed. Please try again.');
     }
   };
@@ -287,7 +288,7 @@ export default function RegisterPage() {
                     <label key={city} className="flex items-center space-x-2 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={formData.preferredLocations.includes(city)}
+                        checked={(formData.preferredLocations ?? []).includes(city)}
                         onChange={() => handleLocationToggle(city)}
                         className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                       />
@@ -321,7 +322,7 @@ export default function RegisterPage() {
                   <span className="text-gray-600">Role:</span>
                   <span className="font-medium capitalize">{formData.role}</span>
                 </div>
-                {formData.role === 'tenant' && (
+                {formData.role === 'tenant' ? (
                   <>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Family Size:</span>
@@ -333,10 +334,10 @@ export default function RegisterPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Preferred Cities:</span>
-                      <span className="font-medium">{formData.preferredLocations.join(', ')}</span>
+                      <span className="font-medium">{(formData.preferredLocations ?? []).join(', ')}</span>
                     </div>
                   </>
-                )}
+                ) : null}
               </div>
 
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">

@@ -24,13 +24,13 @@ interface AuthContextType {
   isLoading: boolean;
 }
 
-interface RegisterData {
+export interface RegisterData {
   email: string;
   password: string;
   firstName: string;
   lastName: string;
   phone: string;
-  role: 'tenant' | 'owner';
+  role: string;
   familySize?: number;
   preferredBudgetMin?: number;
   preferredBudgetMax?: number;
@@ -115,6 +115,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const newUser: User = {
       id: `user_${Date.now()}`,
       ...userData,
+      role: (userData.role === 'tenant' || userData.role === 'owner') ? userData.role : 'tenant',
       isVerified: false
     };
     
