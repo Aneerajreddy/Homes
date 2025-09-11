@@ -1,20 +1,30 @@
 const express = require('express');
 const router = express.Router();
-// const { requireAuth } = require('../middleware/auth');
-const User = require('../models/User');
+const { favoriteService, userService } = require('../services/database');
 
 // Add property to favorites
 router.post('/:propertyId', async (req, res) => {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await userService.findById(req.user.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
-    if (!user.favorites) user.favorites = [];
-    if (!user.favorites.includes(req.params.propertyId)) {
-      user.favorites.push(req.params.propertyId);
-      await user.save();
+    
+    // Check if favorite already exists
+    const existingFavorite = await favoriteService.findUserFavorite(req.user.id, req.params.propertyId);
+    if (existingFavorite) {
+      const userFavorites = await favoriteService.findByUser(req.user.id);
+      return res.json({ favorites: userFavorites });
     }
-    res.json({ favorites: user.favorites });
+    
+    // Create new favorite
+    await favoriteService.create({
+      userId: req.user.id,
+      propertyId: req.params.propertyId
+    });
+    
+    const userFavorites = await favoriteService.findByUser(req.user.id);
+    res.json({ favorites: userFavorites });
   } catch (err) {
+    console.error('Add favorite error:', err);
     res.status(500).json({ message: 'Server error' });
   }
 });
@@ -22,12 +32,14 @@ router.post('/:propertyId', async (req, res) => {
 // Remove property from favorites
 router.delete('/:propertyId', async (req, res) => {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await userService.findById(req.user.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
-    user.favorites = (user.favorites || []).filter(id => id !== req.params.propertyId);
-    await user.save();
-    res.json({ favorites: user.favorites });
+    
+    await favoriteService.deleteUserFavorite(req.user.id, req.params.propertyId);
+    const userFavorites = await favoriteService.findByUser(req.user.id);
+    res.json({ favorites: userFavorites });
   } catch (err) {
+    console.error('Remove favorite error:', err);
     res.status(500).json({ message: 'Server error' });
   }
 });
@@ -35,10 +47,13 @@ router.delete('/:propertyId', async (req, res) => {
 // List all favorite properties
 router.get('/', async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).populate('favorites');
+    const user = await userService.findById(req.user.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
-    res.json({ favorites: user.favorites });
+    
+    const userFavorites = await favoriteService.findByUser(req.user.id);
+    res.json({ favorites: userFavorites });
   } catch (err) {
+    console.error('Get favorites error:', err);
     res.status(500).json({ message: 'Server error' });
   }
 });

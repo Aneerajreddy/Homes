@@ -1,21 +1,41 @@
-const Booking = require('../models/Booking');
+const { bookingService } = require('../services/database');
 
 exports.getAll = async (req, res) => {
-  const bookings = await Booking.find().populate('property tenant');
-  res.json(bookings);
+  try {
+    const bookings = await bookingService.findAll();
+    res.json(bookings);
+  } catch (err) {
+    console.error('Booking fetch error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
 exports.create = async (req, res) => {
-  const booking = await Booking.create({ ...req.body, tenant: req.user.id });
-  res.status(201).json(booking);
+  try {
+    const booking = await bookingService.create({ ...req.body, tenantId: req.user.id });
+    res.status(201).json(booking);
+  } catch (err) {
+    console.error('Booking creation error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
 exports.update = async (req, res) => {
-  const booking = await Booking.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(booking);
+  try {
+    const booking = await bookingService.updateById(req.params.id, req.body);
+    res.json(booking);
+  } catch (err) {
+    console.error('Booking update error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
 exports.delete = async (req, res) => {
-  await Booking.findByIdAndDelete(req.params.id);
-  res.json({ message: 'Booking deleted' });
+  try {
+    await bookingService.deleteById(req.params.id);
+    res.json({ message: 'Booking deleted' });
+  } catch (err) {
+    console.error('Booking deletion error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
 };

@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const { userService } = require('../services/database');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -9,12 +9,12 @@ exports.register = async (req, res) => {
     if (!firstName || !lastName || !email || !password) {
       return res.status(400).json({ message: 'All required fields must be filled.' });
     }
-    const existing = await User.findOne({ email });
+    const existing = await userService.findByEmail(email);
     if (existing) {
       return res.status(400).json({ message: 'Email already exists.' });
     }
     const hashed = await bcrypt.hash(password, 10);
-    const user = await User.create({
+    const user = await userService.create({
       firstName,
       lastName,
       email,
@@ -23,8 +23,18 @@ exports.register = async (req, res) => {
       role: role || 'tenant',
       isVerified: false
     });
-    res.status(201).json({ message: 'User registered', user: { id: user._id, firstName, lastName, email, role: user.role } });
+    res.status(201).json({ 
+      message: 'User registered', 
+      user: { 
+        id: user.id, 
+        firstName: user.firstName, 
+        lastName: user.lastName, 
+        email: user.email, 
+        role: user.role 
+      } 
+    });
   } catch (err) {
+    console.error('Registration error:', err);
     res.status(500).json({ message: 'Server error' });
   }
 };
@@ -36,7 +46,7 @@ exports.login = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: 'Email and password are required.' });
     }
-    const user = await User.findOne({ email });
+    const user = await userService.findByEmail(email);
     if (!user) {
       return res.status(400).json({ message: 'Invalid credentials.' });
     }
@@ -44,11 +54,11 @@ exports.login = async (req, res) => {
     if (!match) {
       return res.status(400).json({ message: 'Invalid credentials.' });
     }
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET || 'fallback_secret', { expiresIn: '1d' });
     res.json({
       token,
       user: {
-        id: user._id,
+        id: user.id,
         email: user.email,
         firstName: user.firstName,
         lastName: user.lastName,
@@ -58,6 +68,7 @@ exports.login = async (req, res) => {
       }
     });
   } catch (err) {
+    console.error('Login error:', err);
     res.status(500).json({ message: 'Server error' });
   }
 };
